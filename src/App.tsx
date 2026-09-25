@@ -13,7 +13,6 @@ import Patients from './pages/Patients';
 import PatientCase from './pages/PatientCase';
 import Facilities from './pages/Facilities';
 import Notifications from './pages/Notifications';
-import OfflineData from './pages/OfflineData';
 import Settings from './pages/Settings';
 import ImpactBenefits from './pages/ImpactBenefits';
 
@@ -47,7 +46,6 @@ export default function App() {
           <Route path="/patient/:id" element={<PatientCase />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/notifications" element={<Notifications />} />
-          <Route path="/offline" element={<OfflineData />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/impact" element={<ImpactBenefits />} />
         </Route>

@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, PlusCircle, Search, FileText, CalendarCheck,
-  Users, Building2, Bell, Database, Settings, X, Activity
+  Users, Building2, Bell, Settings, X, Activity
 } from 'lucide-react';
 import SyncIndicator from '../ui/SyncIndicator';
 import { useApp } from '../../context/AppContext';
@@ -15,7 +15,6 @@ const navItems = [
   { to: '/patients', icon: Users, label: 'Patients' },
   { to: '/facilities', icon: Building2, label: 'Facilities' },
   { to: '/notifications', icon: Bell, label: 'Notifications' },
-  { to: '/offline', icon: Database, label: 'Offline Data' },
   { to: '/settings', icon: Settings, label: 'Settings' },
 ];
 

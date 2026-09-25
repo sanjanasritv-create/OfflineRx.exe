@@ -1,16 +1,15 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { 
-  FileText, CalendarCheck, AlertTriangle, CheckCircle, Database, 
+  FileText, CalendarCheck, AlertTriangle, CheckCircle, 
   Plus, Search, Users, ChevronRight, MapPin
 } from 'lucide-react';
 import StatCard from '../components/ui/StatCard';
 import StatusBadge from '../components/ui/StatusBadge';
-import OfflineBanner from '../components/ui/OfflineBanner';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { syncState, pendingSyncCount, referrals } = useApp();
+  const { referrals } = useApp();
 
   const pendingReferrals = referrals?.filter(r => r.status !== 'Completed') || [];
   
@@ -60,12 +59,9 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {syncState !== 'online' && (
-        <OfflineBanner />
-      )}
 
       {/* Stats Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
           label="Pending Referrals"
           value={pendingCount.toString()}
@@ -89,12 +85,6 @@ export default function Dashboard() {
           value={completedMonth.toString()}
           icon={CheckCircle}
           color="green"
-        />
-        <StatCard
-          label="Offline Changes"
-          value={pendingSyncCount.toString()}
-          icon={Database}
-          color="slate"
         />
       </div>
 
